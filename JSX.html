@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hi</title>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  const root = document.getElementById("root");
+
+  // JSX 형식
+
+  const Title = () => (
+    <h3 id="title" onMouseOver = {() => console.log("Hi")}>Total Click : 0</h3>
+  );
+
+  const Btn = () => (
+    <button onClick = {() => console.log("Click")}>Click me</button>
+  );
+
+  const Container = () => (
+    <div>
+      <Title/>
+      <Btn/>
+    </div>
+  );
+
+  // 기본 형식 (사용하지 않으나 JSX를 바벨로 전환 시 나오는 형태)
+
+  //   const Title = () => /*#__PURE__*/React.createElement("h3", {
+  //   id: "title",
+  //   onMouseOver: () => console.log("Hi")
+  // }, "Total Click : 0");
+
+  // const Btn = () => /*#__PURE__*/React.createElement("button", {
+  //   onClick: () => console.log("Click")
+  // }, "Click me");
+
+  // const Container = () => React.createElement("div", null, React.createElement(Title, null), React.createElement(Btn, null));
+
+  ReactDOM.render (<Container/>, root)
+</script>
+</html>
+
